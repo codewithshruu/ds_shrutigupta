@@ -1,0 +1,5 @@
+sentiment_numeric,side_numeric,profit_flag,sentiment_label,trade_type
+0.0,-1,0.5658545869813475,Fear,SELL
+0.0,1,0.24671763135541802,Fear,BUY
+1.0,-1,0.5137822055714854,Greed,SELL
+1.0,1,0.31536616339777057,Greed,BUY
