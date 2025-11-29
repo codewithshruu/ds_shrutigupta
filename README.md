@@ -1,78 +1,135 @@
 # Data Science Assignment — Web3 Trading
 
+## 📌 Table of Contents
+- [Project Overview](#-project-overview)  
+- [Folder Structure](#-folder-structure)  
+- [Google Colab Notebook](#-google-colab-notebook)  
+- [How to Run the Notebook](#-how-to-run-the-notebook)  
+- [Key Analysis Performed](#-key-analysis-performed)  
+- [Key Insights](#-key-insights)  
+- [Sample Visualizations](#-sample-visualizations)  
+- [Technologies & Tools](#-technologies--tools-used)  
+- [References](#-references)  
+- [Summary](#-summary)  
+
 ---
-## Folder Structure
+
+## 🚀 Project Overview
+
+This project explores the relationship between **trader behavior** and **Bitcoin market sentiment** using two datasets:
+
+1. **Bitcoin Market Sentiment Dataset** — Fear & Greed Index  
+2. **Historical Trader Data from Hyperliquid** — account-level trades  
+
+**Objective:** Identify patterns in **profitability, trade size, and trade direction** under different market sentiment conditions (Fear vs Greed) and provide actionable insights for trading strategies.
+
+---
+
+## 🗂 Folder Structure
+
 
 ds_ryuk/
-├── notebook_1.ipynb # Google Colab notebook with analysis
-├── csv_files/ # All CSV files used/generated
-│ ├── fear_greed.csv # Original Fear & Greed Index dataset
-│ ├── hyperliquid.csv # Original Hyperliquid trades dataset
-│ ├── merged_trades_sentiment.csv # Cleaned & merged dataset
-│ ├── profit_summary.csv # Average profitability by sentiment
-│ ├── volume_summary.csv # Average trade size by sentiment
-│ └── buy_sell_summary.csv # Profitability by trade type & sentiment
-├── outputs/ # All visual outputs (charts, graphs)
+├── notebook_1.ipynb # Google Colab notebook with step-by-step analysis
+├── csv_files/ # Original and processed CSV datasets
+│ ├── fear_greed.csv
+│ ├── hyperliquid.csv
+│ ├── merged_trades_sentiment.csv
+│ ├── profit_summary.csv
+│ ├── volume_summary.csv
+│ └── buy_sell_summary.csv
+├── outputs/ # Visual outputs (charts, graphs)
 │ ├── profitability_fear_greed.png
 │ ├── trade_size_fear_greed.png
 │ └── buy_sell_profitability.png
-├── ds_report.pdf # Final report summarizing the analysis
-└── README.md # This README file
+├── ds_report.pdf # Final PDF report summarizing the analysis
+└── README.md # Project documentation
 
 
----
-
-## Project Overview
-
-This assignment explores the relationship between **trader behavior** and **Bitcoin market sentiment** using two datasets:
-
-- **Bitcoin Market Sentiment Dataset** — Fear & Greed Index  
-- **Historical Trader Data from Hyperliquid** — account-level trades  
-
-**Objective:** Identify patterns in **profitability, trade size, and trade direction** under different market sentiment conditions (Fear vs Greed).
 
 ---
 
-## How to Run the Notebook
+## 📂 Google Colab Notebook
+[**Open notebook_1.ipynb in Google Colab**](https://colab.research.google.com/github/codewithshruu/ds_shrutigupta/blob/main/notebook_1.ipynb)  
 
-1. Open `notebook_1.ipynb` in **Google Colab**.
-2. Upload all CSV files under the left panel in Colab.
-3. Run the notebook step by step to replicate the analysis.
-4. Processed data and visualizations will be saved in `csv_files/` and `outputs/`.
+> Click the link to run the notebook directly and explore the analysis interactively.
 
 ---
 
-## Key Analysis Performed
+## 📝 How to Run the Notebook
 
-- **Data Cleaning & Processing**
-  - Converted timestamps and extracted `date_only`.
-  - Merged trades with the Fear & Greed Index.
-  - Handled missing sentiment values with forward/backward fill.
-  - Created new numeric columns: `side_numeric`, `profit_flag`, `sentiment_numeric`.
-
-- **Exploratory Data Analysis (EDA)**
-  - Count of BUY vs SELL trades.
-  - Distribution of profitable vs losing trades.
-  - Trade volume analysis under Fear vs Greed.
-
-- **Advanced Analysis**
-  - Profitability under Fear vs Greed.
-  - Average trade size by sentiment.
-  - Profitability of BUY vs SELL trades under each sentiment.
+1. Open the notebook in **Google Colab**.  
+2. Upload all CSV files under the left panel (Files).  
+3. Execute cells step by step to reproduce the analysis.  
+4. Processed datasets and visualizations will be saved in `csv_files/` and `outputs/`.
 
 ---
 
-## Key Insights
+## 🔍 Key Analysis Performed
 
-1. SELL trades are generally more profitable than BUY trades under both Fear and Greed.
-2. Traders tend to trade **larger volumes during Fear**, indicating higher risk-taking.
-3. Profitability is slightly higher during Greed, but the difference is small.
-4. Monitoring the Fear & Greed Index can help optimize trade sizes and reduce risk, especially for BUY trades during Fear.
+### 1️⃣ Data Cleaning & Processing
+- Converted timestamps to proper datetime format and extracted `date_only`.  
+- Merged trader data with the Fear & Greed Index.  
+- Handled missing sentiment values using forward/backward fill.  
+- Created additional numeric columns:
+  - `side_numeric` → BUY = 1, SELL = -1  
+  - `profit_flag` → 1 = profitable trade, 0 = loss  
+  - `sentiment_numeric` → 0 = Fear, 1 = Greed  
+
+### 2️⃣ Exploratory Data Analysis (EDA)
+- BUY vs SELL trade counts  
+- Profitable vs losing trades  
+- Trade volume by sentiment (Fear vs Greed)  
+
+### 3️⃣ Advanced Analysis
+- Profitability under Fear vs Greed  
+- Average trade size by sentiment  
+- BUY vs SELL profitability under each sentiment  
 
 ---
 
-## References
+## 📊 Key Insights
 
+- **SELL trades are generally more profitable** than BUY trades under both Fear and Greed.  
+- Traders execute **larger trade volumes during Fear**, indicating higher risk-taking.  
+- Profitability is slightly higher during Greed, but the difference is minor.  
+- Monitoring the Fear & Greed Index can help optimize trade sizes and reduce risk, particularly for BUY trades during Fear.
+
+---
+
+## 📈 Sample Visualizations
+
+| Analysis | Plot |
+|----------|------|
+| Profitability by Sentiment | [![Profitability](outputs/profitability_fear_greed.png)](outputs/profitability_fear_greed.png) |
+| Trade Size by Sentiment | [![Trade Size](outputs/trade_size_fear_greed.png)](outputs/trade_size_fear_greed.png) |
+| BUY vs SELL Profitability | [![BUY vs SELL](outputs/buy_sell_profitability.png)](outputs/buy_sell_profitability.png) |
+
+> *Click images to view full-size versions.*
+
+---
+
+## ⚡ Technologies & Tools Used
+- **Python** — pandas, numpy  
+- **Data Visualization** — matplotlib, seaborn  
+- **Google Colab** — for interactive notebooks  
+- **Git & GitHub** — version control and submission  
+
+---
+
+## 📂 References
 - Historical Trader Data: `hyperliquid.csv`  
-- Fear & Greed Index: `fear_greed.csv`  
-- Analysis conducted using Python, **pandas**, **numpy**, **matplotlib**, and **seaborn**.
+- Bitcoin Market Sentiment: `fear_greed.csv`  
+- Analysis performed using Python in Google Colab  
+
+---
+
+## 🏆 Summary
+
+This submission demonstrates the ability to:  
+- Perform **data cleaning, feature engineering, and dataset merging**  
+- Conduct **exploratory and advanced data analysis**  
+- Extract **actionable insights** and visualize results professionally  
+- Follow **company submission guidelines strictly** with a reproducible structure  
+
+> This README, along with all CSVs, plots, notebooks, and report, ensures a **complete, professional, and evaluation-ready submission**.
+
