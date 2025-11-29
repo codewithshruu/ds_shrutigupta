@@ -28,23 +28,23 @@ This project explores the relationship between **trader behavior** and **Bitcoin
 ## 🗂 Folder Structure
 
 
-ds_ryuk/
-├── notebook_1.ipynb # Google Colab notebook with step-by-step analysis
-├── csv_files/ # Original and processed CSV datasets
-│ ├── fear_greed.csv
-│ ├── hyperliquid.csv
-│ ├── merged_trades_sentiment.csv
-│ ├── profit_summary.csv
-│ ├── volume_summary.csv
-│ └── buy_sell_summary.csv
-├── outputs/ # Visual outputs (charts, graphs)
-│ ├── profitability_fear_greed.png
-│ ├── trade_size_fear_greed.png
-│ └── buy_sell_profitability.png
-├── ds_report.pdf # Final PDF report summarizing the analysis
-└── README.md # Project documentation
-
-
+```text
+ds_shrutigupta/
+├── notebook_1.ipynb
+├── csv_files/
+│   ├── fear_greed.csv
+│   ├── hyperliquid.csv
+│   ├── merged_trades_sentiment.csv
+│   ├── profit_summary.csv
+│   ├── volume_summary.csv
+│   └── buy_sell_summary.csv
+├── outputs/
+│   ├── profitability_fear_greed.png
+│   ├── trade_size_fear_greed.png
+│   └── buy_sell_profitability.png
+├── ds_report.pdf
+└── README.md
+```
 
 ---
 
@@ -131,5 +131,4 @@ This submission demonstrates the ability to:
 - Extract **actionable insights** and visualize results professionally  
 - Follow **company submission guidelines strictly** with a reproducible structure  
 
-> This README, along with all CSVs, plots, notebooks, and report, ensures a **complete, professional, and evaluation-ready submission**.
 
