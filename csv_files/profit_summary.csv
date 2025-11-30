@@ -1,0 +1,3 @@
+sentiment_numeric,profit_flag,sentiment_label
+0.0,0.4078714994533681,Fear
+1.0,0.4203497192722118,Greed
